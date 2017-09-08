@@ -1,16 +1,15 @@
 <ion-header>
     <ion-navbar>
-        <ion-title>signature-modal</ion-title>
+        <ion-title>signature client</ion-title>
     </ion-navbar>
 </ion-header>
 
 
 <ion-content padding>
-    <signature-pad [options]="signaturePadOptions"></signature-pad>
-
-    <div *ngIf="marchandise.CR == true" id="cr">
+    <div *ngIf="marchandis.CR === true" id="cr">
         !! Ce colis est en Contre Remboursement !!
     </div>
+    <signature-pad [options]="signaturePadOptions"></signature-pad>
 
     <ion-grid>
         <ion-row>

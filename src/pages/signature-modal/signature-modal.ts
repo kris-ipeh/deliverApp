@@ -20,7 +20,7 @@ import { TabsPage } from "../tabs/tabs";
   templateUrl: 'signature-modal.html',
 })
 export class SignatureModalPage {
-
+  marchandis: any;
   marchandise: any;
   delivered:any;
   key: string;
@@ -46,8 +46,10 @@ export class SignatureModalPage {
 
     // On se connecte à la base de donnée sur l'élément à modifier
     this.marchandise = dbAf.list('/users/' + this.user + '/cargaison/');
+    this.marchandis = dbAf.list('/users/' + this.user + '/cargaison/' + this.key);
     this.delivered = dbAf.list('/delivered/');
 
+    console.log('CR : ', this.marchandis.CR);
     
   }
 
