@@ -137,7 +137,7 @@ export class RamassagePage {
           handler: () => {
             this.marchandise.push(this.marchandiseBinding).offline.then( res => {
               this.u.update(this.user,{dernierBL: (this.dernierBL + 1)})
-              alert('Bon de livraison ajouté avec succés');
+              /* alert('Bon de livraison ajouté avec succés'); */
               this.navCtrl.setRoot(AccueilPage);
             }).catch(e => {
               console.log('Une erreur est survenue');

@@ -1,15 +1,17 @@
 *****************************************
 // DEV //
 --------------
-  -Fixer Numéro BL (pb lors de l'ajout de 2 bons sans recharger) => => Antoine
+  -Fixer erreur de connexion quand utilisateur invalide
 
-  -prévoir interface web pour les clients
+  -Fixer Numéro BL (pb lors de l'ajout de 2 bons sans recharger)
 
   -ajouter observation sur modal signature
 
-  -rentrer tous les clients dans la bdd qui ne sont pas facturés
+  -prévoir interface web pour les clients
 
   -Lier avec bdd locale pour le retour
+
+  -rentrer tous les clients dans la bdd qui ne sont pas facturés
 
   -Nettoyer, optimiser et commenter le code
 

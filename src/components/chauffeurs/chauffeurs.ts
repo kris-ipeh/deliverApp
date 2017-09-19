@@ -26,13 +26,14 @@ export class ChauffeursComponent {
   constructor(public navCtrl: NavController, private dbAf: AngularFireOfflineDatabase,  public modalCtrl: ModalController, public navParams: NavParams, public viewCtrl: ViewController) {
     this.users = this.dbAf.list('/users/');
     this.users.subscribe(snap => {
+      // on crée un tableau de chauffeurs
       let chauffeurs = [];
       snap.forEach(element => {
-        /* console.log("element",element); */
+        // on insère les éléments récupérés dans la base 
+        // dans le tableau de chauffeurs
         chauffeurs.push(element);
       });
       this.items = chauffeurs;
-       /* console.log("this.items:",chauffeurs);  */
       this.loadItems = chauffeurs;
     });
   }

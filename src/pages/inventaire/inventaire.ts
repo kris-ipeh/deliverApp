@@ -51,6 +51,7 @@ export class InventairePage {
 
     this.signatureImage = navParams.get('signatureImage');
     this.user = firebase.auth().currentUser.uid;
+
     //Marchandise
     this.marchandise = dbAf.list('/users/' + this.user + '/cargaison/', {
       query:{
@@ -59,7 +60,7 @@ export class InventairePage {
       }
     });
     this.marchandise.subscribe(queryMarchandise => {
-      console.log('query : ',queryMarchandise); 
+      console.log('marchandise en cours : ',queryMarchandise); 
     });
 
     this.marchandiseLivree = dbAf.list('/users/' + this.user + '/cargaison/', {
@@ -69,7 +70,7 @@ export class InventairePage {
       }
     });
     this.marchandiseLivree.subscribe(queryMarchandise => {
-      console.log('marchandiseLivree : ',queryMarchandise); 
+      console.log('marchandise livrée : ',queryMarchandise); 
     });
 
     this.client = dbAf.list('/clients/', { preserveSnapshot: true });
@@ -114,35 +115,6 @@ export class InventairePage {
     let myModal = this.modalCtrl.create(GoogleMapComponent, {adress: this.clientAdress, latLng: this.clientCoords});
     myModal.present();
   }; 
-  
-  /* suppr(key:string) {
-    // Confirmer la suppression
-    let confirm = this.alertCtrl.create({
-      title: 'SUPPRIMER',
-      message: 'La suppression sera définitive, êtes vous vraiment sûr de vouloir supprimer ce bon de livraison ?',
-      buttons: [
-        {
-          text: 'Annuler',
-          handler: () => {
-            console.log('Disagree clicked');
-          }
-        },
-        {
-          text: 'Supprimer',
-          handler: () => {
-            // Supprimer de firebase
-            this.marchandise.remove(key).then(snapshot => {
-              alert( "Ce bon de livraison à bien été supprimé");
-            })
-            .catch(error => {
-              console.log( "Une erreur est survenue !");
-            });
-          }
-        }
-      ]
-    });
-    confirm.present();
-  }; */ 
   
   
 }
